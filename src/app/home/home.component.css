@@ -1,0 +1,5 @@
+@media (max-width: 992px) {
+    .col-lg-2 {
+        height: 20vh !important;
+    }
+}

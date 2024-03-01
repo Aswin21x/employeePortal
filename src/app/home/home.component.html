@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row w-100">
+        <div *ngIf="sideBarStatus" style="height: 90vh;" class=" side-bar col-lg-2 bg-dark d-flex flex-column p-3">
+    <a style="text-decoration: none; color: white;" routerLink="/dashboard" class="fw-bold m-2">HOME</a>
+    <a style="text-decoration: none; color: white;" routerLink="/users" class="fw-bold m-2">USERS</a>
+    <button (click)="logout()" class="btn btn-warning mt-auto"> <i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+</div>
+<div style="max-width: 90%;" class="col-lg-10">
+    <div class="row p-3 w-100">
+<div class="col-lg-8">
+    <div style="height: 140px; background-color: aqua;" class="banner rounded p-3 d-flex align-items-center shadow">
+        <h1  class="fw-bold" ><i (click)="menuBtnClicked()" style="cursor: pointer;" class="fa-solid fa-bars me-3"></i>WELCOME {{adminName}}</h1>
+    </div>
+
+
+<div class="row mt-3-">
+    <div class="col-lg-5 mt-3 border rounded shadow">
+        <!-- calender -->
+        <app-calender></app-calender>      
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-6 mt-3 border rounded shadow">
+        <!-- chart -->
+        <app-chart></app-chart>
+    </div>
+</div>
+</div>
+
+<div class="col-lg-4">
+    <div style="height: 400px;" class="border rounded p-2 shadow edit-admin">
+    <app-update-admin (onAdminChange)="onAdminChange($event)" ></app-update-admin>
+    </div>
+    <br>
+    <div style="height: 150px; background-color: aqua;" class="d-flex align-items-center justify-content-center p-5">
+        <h3 class="fw-bold">Employees : {{userCount}}</h3>
+</div>
+</div>
+    </div>
+</div>
